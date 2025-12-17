@@ -35,12 +35,24 @@
   }
 }
 
-.card {
+.products { 
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 2em;
   border-color: black;
   border-style: solid;
-  height: 200px;
-  width: 200px;
+  height: 350px;
+  
+  width: 300px;
+  min-width: 200px;
+
+}
+
+.products img {
+  height: 150px;
+  width: 150px;
+
 }
 
 .read-the-docs {
@@ -53,7 +65,7 @@
   align-items: center;
   background-color: aqua;
   width: 100%;
-  height: 110vh;
+  height: 200vh;
   flex-direction: column;
 }
 
@@ -80,11 +92,11 @@ html, body {
   
 
 } 
-
+/* 
 .holder > * {
   flex: 0 0 auto; 
   width: calc(13% - 10px);
-}
+} */
 
 .navigator {
   display: flex;
@@ -117,3 +129,14 @@ html, body {
   width: 60%;
   height: 800px;
 } 
+
+.icon-button {
+  background: transparent;
+  border: none;
+  padding: 10px;
+}
+
+.icon-button .icon {
+  cursor: pointer;
+  display: inline-flex;
+}
