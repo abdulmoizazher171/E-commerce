@@ -3,7 +3,7 @@ import './App.css';
 import Home from "./assets/components/Home.tsx";
 import Cart from "./assets/components/Cart.tsx";
 import About from './assets/components/About.tsx';
-import Contact from "./assets/components/Contact.tsx";
+import Customers from './assets/components/Customer.tsx';
 import Favourite from './assets/components/Favourite.tsx';
 import { useState } from 'react';
 
@@ -119,20 +119,20 @@ function App() {
 
         <nav className='navigator'>
           <Link to="/">Home</Link> | {" "}
-          <Link to="/Contact">Contact</Link>
+          <Link to="/Contact">Customers</Link>
           <Link to="/Cart">Cart</Link>
-          <Link to="/Favourite">Favourite</Link>
+          <Link to="/Favourite">Orders</Link>
           <Link to="/about">About</Link>
         </nav>
 
 
 
         <Routes>
-          <Route path='/' element={<Home products={products} images={imageData.images} clickcart={addtocart} clickfav={addtofav}/>} />
+          <Route path='/' element={<Home  images={imageData.images} clickcart={addtocart} clickfav={addtofav}/>} />
           <Route path='/about' element={<About />}></Route>
-          <Route path='/contact' element={<Contact></Contact>}></Route>
+          <Route path='/contact' element={<Customers/>}></Route>
           <Route path='/cart' element={<Cart></Cart>}></Route>
-          <Route path='/favourite' element={<Favourite products={products} favlist={favs} onclick={removefavs}/>} />
+          <Route path='/favourite' element={<Favourite/>} />
 
         </Routes>
 

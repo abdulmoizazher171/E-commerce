@@ -1,15 +1,18 @@
 import Card from "./Card"
 import Slider from './Slider.tsx';
+import axios from "axios";
+import { useEffect,useState } from "react";
 interface productI {
-   id : string;
-  name: string;
+   productId : string;
+  productName: string;
+  description : string;
   price: string;
   image: string;
 }
 
 
 interface productsI {
-  products: productI[];
+  
   images : imageI[];
   clickfav : any;
   clickcart : any;
@@ -21,13 +24,19 @@ interface imageI {
     caption : string
 }
 
-// interface imagesI {
-//     images : imageI[];
-// }
 
 
 
-const Home = ({  products , images , clickfav , clickcart}: productsI) => {
+const Home = ({   images , clickfav , clickcart}: productsI) => {
+
+  const [products, setProducts] = useState<productI[]>([
+])
+
+useEffect(()=>{
+  axios.get("http://localhost:5184/api/products")
+  .then((response)=>  setProducts(response.data))
+})
+console.log(products)
   return (
     <>
        <Slider images={images} />
@@ -38,7 +47,7 @@ const Home = ({  products , images , clickfav , clickcart}: productsI) => {
      
 
       {
-        products.map((product: productI) => (<Card id={product.id} name={product.name} price={product.price} image={product.image} clickfav={clickfav} clickcart={clickcart}></Card>))
+        products.map((product: productI) => (<Card id={product.productId} name={product.productName} price={product.price} description= {product.description}  image={product.image} clickfav={clickfav} clickcart={clickcart}></Card>))
       }
 
 
