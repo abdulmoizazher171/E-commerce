@@ -1,21 +1,25 @@
 import Button from "./Button";
 import Row from "./Row";
 interface productI{
+    id : string;
     name : string;
     price: string;
     image : string;
+    clickfav : any;
+    clickcart : any;
 }
 
-const Card = ( {name  , price , image} : productI) => {
+const Card = ( {id ,name  , price , image , clickcart ,clickfav} : productI) => {
+  
   return (
-    <div className="products">
+    <div className="products" key={id}>
         <h3>{name}</h3>
         <p>{price}</p>
         <img src= {image} alt="" />
         
         <Row>
-        <Button onclick={""} icon={<span style={{ color: "red", fontSize: "20px" }}>❤️</span>}></Button>
-        <Button onclick={''}  icon={<span style={{ color: "black", fontSize: "20px" }}>❌</span>}></Button>
+        <Button onclick={() =>{clickfav(id)}} icon={<span style={{ color: "red", fontSize: "20px" }}>❤️</span>}></Button>
+        <Button onclick={() =>{clickcart(id)}}  icon={<span style={{ color: "black", fontSize: "20px" }}>❌</span>}></Button>
       </Row>
        
         

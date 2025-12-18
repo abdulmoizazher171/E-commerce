@@ -43,7 +43,7 @@
   border-color: black;
   border-style: solid;
   height: 350px;
-  
+  border-radius: 15px;
   width: 300px;
   min-width: 200px;
 
@@ -92,11 +92,11 @@ html, body {
   
 
 } 
-/* 
+
 .holder > * {
   flex: 0 0 auto; 
   width: calc(13% - 10px);
-} */
+} 
 
 .navigator {
   display: flex;
