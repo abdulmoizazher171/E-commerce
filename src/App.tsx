@@ -2,10 +2,12 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from "./assets/components/Home.tsx";
 import Cart from "./assets/components/Cart.tsx";
-import About from './assets/components/About.tsx';
+
 import Customers from './assets/components/Customer.tsx';
-import Favourite from './assets/components/Favourite.tsx';
+
 import { useState } from 'react';
+import Order from './assets/components/Order.tsx';
+import AddProduct from './assets/components/AddProduct.tsx';
 
 interface productI {
   id : string;
@@ -121,18 +123,19 @@ function App() {
           <Link to="/">Home</Link> | {" "}
           <Link to="/Contact">Customers</Link>
           <Link to="/Cart">Cart</Link>
-          <Link to="/Favourite">Orders</Link>
-          <Link to="/about">About</Link>
+          <Link to="/Orders">Orders</Link>
+          <Link to="/AddProduct">Add Product</Link>
         </nav>
+
 
 
 
         <Routes>
           <Route path='/' element={<Home  images={imageData.images} clickcart={addtocart} clickfav={addtofav}/>} />
-          <Route path='/about' element={<About />}></Route>
+          <Route path='/AddProduct' element={<AddProduct/>}></Route>
           <Route path='/contact' element={<Customers/>}></Route>
           <Route path='/cart' element={<Cart></Cart>}></Route>
-          <Route path='/favourite' element={<Favourite/>} />
+          <Route path='/Orders' element={<Order/>} />
 
         </Routes>
 

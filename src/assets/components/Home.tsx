@@ -35,7 +35,7 @@ const Home = ({   images , clickfav , clickcart}: productsI) => {
 useEffect(()=>{
   axios.get("http://localhost:5184/api/products")
   .then((response)=>  setProducts(response.data))
-})
+},[])
 console.log(products)
   return (
     <>
