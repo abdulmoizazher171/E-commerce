@@ -1,5 +1,5 @@
 // import Button from "./Button";
-
+import { Button } from "@/components/ui/button"
 import axios from "axios";
 //import console from "console";
 import { useEffect, useState } from "react";
@@ -96,7 +96,7 @@ const Card = ({ id, name, price, description, image }: productI) => {
       <div className="bottom">
         <img src={image} alt={name} />
 
-        <button onClick={() => handleBuyClick(id)}>Buy</button>
+        <Button variant="outline" onClick={() => handleBuyClick(id)}>Buy</Button>
       </div>
 
 
@@ -110,13 +110,13 @@ const Card = ({ id, name, price, description, image }: productI) => {
               className="form-select"
               value={selectedCustomerId}
               onChange={(e) => {
-                console.log("Selected ID:", e.target.value); // This should now show a number, not a name
+                console.log("Selected ID:", e.target.value); 
                 setSelectedCustomerId(e.target.value);
               }}
             >
               <option value="">-- Choose Customer --</option>
               {customers.map((c: customerI) => (
-                // Ensure c.id matches the property name from your API (check if it's c.id or c.Id)
+                
                 <option key={c.customerId} value={c.customerId}>
                   {c.firstName} {c.lastName}
                 </option>

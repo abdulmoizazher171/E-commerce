@@ -16,7 +16,7 @@ const Order = () => {
         .then((response)=> (setOrder(response.data)))
         console.log(Orders)
     },[])
-
+      
   return (
     <div>
             <table className="order-table">
@@ -26,7 +26,11 @@ const Order = () => {
                 <th>Price</th>
                 <th>Order Date</th>
               </tr>
-              {Orders.map((Order : any)=> (<OrderRRow orderId={Order.orderId} orderDate={Order.orderDate} product={Order.product} customer={Order.customer}/>))}
+              {Orders.map(
+                
+                (Order : any)=> (
+                  
+                <OrderRRow orderId={Order.orderId} orderDate={Order.orderDate} product={Order.product} customer={Order.customer}/>))}
 
             </table>
     </div>

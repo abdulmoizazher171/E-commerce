@@ -14,8 +14,7 @@ interface productI {
 interface productsI {
   
   images : imageI[];
-  clickfav : any;
-  clickcart : any;
+ 
 }
 
 

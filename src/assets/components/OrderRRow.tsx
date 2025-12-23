@@ -22,12 +22,20 @@
 
 
 const OrderRRow = ({orderId , orderDate , product , customer} : OrderI) => {
+
+  const formattedDate = new Date(orderDate).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric'
+});
   return (
+
+    
     <tr>
         <td>{orderId}</td>
         <td>{customer.firstName + customer.lastName}</td>
         <td>{product.price}</td>
-        <td>{orderDate}</td>
+        <td>{formattedDate}</td>
     </tr>
   )
 }
