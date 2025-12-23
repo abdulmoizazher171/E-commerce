@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Home from "./assets/components/Home.tsx";
-import Cart from "./assets/components/Cart.tsx";
+
 
 import Customers from './assets/components/Customer.tsx';
 
@@ -121,8 +121,8 @@ function App() {
 
         <nav className='navigator'>
           <Link to="/">Home</Link> | {" "}
-          <Link to="/Contact">Customers</Link>
-          <Link to="/Cart">Cart</Link>
+          <Link to="/Customers">Customers</Link>
+          
           <Link to="/Orders">Orders</Link>
           <Link to="/AddProduct">Add Product</Link>
         </nav>
@@ -133,8 +133,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Home  images={imageData.images} clickcart={addtocart} clickfav={addtofav}/>} />
           <Route path='/AddProduct' element={<AddProduct/>}></Route>
-          <Route path='/contact' element={<Customers/>}></Route>
-          <Route path='/cart' element={<Cart></Cart>}></Route>
+          <Route path='/Customers' element={<Customers/>}></Route>
+         
           <Route path='/Orders' element={<Order/>} />
 
         </Routes>

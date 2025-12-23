@@ -27,7 +27,7 @@ interface imageI {
 
 
 
-const Home = ({   images , clickfav , clickcart}: productsI) => {
+const Home = ({   images }: productsI) => {
 
   const [products, setProducts] = useState<productI[]>([
 ])
@@ -47,7 +47,7 @@ console.log(products)
      
 
       {
-        products.map((product: productI) => (<Card id={product.productId} name={product.productName} price={product.price} description= {product.description}  image={product.image} clickfav={clickfav} clickcart={clickcart}></Card>))
+        products.map((product: productI) => (<Card id={product.productId} name={product.productName} price={product.price} description= {product.description}  image={product.image} />))
       }
 
 

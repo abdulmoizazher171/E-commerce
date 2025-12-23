@@ -19,7 +19,7 @@ const Order = () => {
 
   return (
     <div>
-            <table className="table">
+            <table className="order-table">
               <tr>
                 <th>Product Name</th>
                 <th>Customer Name</th>

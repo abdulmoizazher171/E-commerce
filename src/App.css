@@ -43,10 +43,12 @@
   align-items: center;
   flex-direction: column;
   padding: 2em;
-  border-color: black;
-  border-style: solid;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   height: 500px;
-  border-radius: 15px;
+  
   width: 300px;
   min-width: 200px;
 
@@ -57,6 +59,40 @@
   width: 150px;
 
 }
+
+.bottom {
+  margin-top: auto; 
+ 
+  display: flex;
+  flex-direction: column; 
+  gap: 12px; /* This creates the little gap between image and button */
+  align-items: center; /* Centers them horizontally within the bottom area */
+}
+
+.bottom img {
+  height: 150px;
+  width: 150px; /* Limits image height */
+  object-fit: cover; /* Prevents image stretching */
+  border-radius: 8px;
+}
+
+.bottom button {
+  width: 100%; /* Makes button same width as image */
+  padding: 12px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.bottom button:hover {
+  background-color: #333;
+}
+
+
+
 
 .read-the-docs {
   color: #888;
@@ -182,4 +218,192 @@ body {
   color: #1e293b;
   border-bottom: 1px solid #f1f5f9;
 
+}
+
+
+/* Container and Wrapper */
+.form-container {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.form-title {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* Form Layout */
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* Individual Grouping */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+/* Inputs, Selects, and Textareas */
+.form-input, 
+.form-select {
+    padding: 12px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #111827;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus, 
+.form-select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Submit Button */
+.submit-btn {
+    margin-top: 10px;
+    padding: 14px;
+    background-color: #2563eb;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #1d4ed8;
+}
+
+.submit-btn:active {
+    transform: scale(0.98);
+}
+
+
+
+/* Table Wrapper */
+.order-table {
+    width: 100%;
+    border-collapse: collapse; /* Prevents double borders */
+    margin: 20px 0;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures corners stay rounded */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+}
+
+/* Header Styling */
+.order-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+    text-align: left;
+    padding: 12px 16px;
+    border-bottom: 2px solid #e2e8f0;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+/* Row & Cell Styling */
+.order-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+    vertical-align: middle;
+}
+
+/* Zebra Striping (Optional) */
+.order-table tr:nth-child(even) {
+    background-color: #fcfcfc;
+}
+
+/* Hover Effect */
+.order-table tr:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+/* Responsive Table */
+@media (max-width: 600px) {
+    .order-table {
+        display: block;
+        overflow-x: auto; /* Adds horizontal scroll on small screens */
+    }
+}
+
+
+/* Dark background to dim the rest of the screen */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Semi-transparent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it's on top of navbar */
+}
+
+/* The actual white box */
+.modal-Content {
+  background: rgb(255, 255, 255);
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-actions button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+}
+
+.confirm-btn {
+  background-color: #2563eb;
+  color: white;
+  border: none !important;
+}
+
+.confirm-btn:disabled {
+  background-color: #a5b4fc;
+  cursor: not-allowed;
 }

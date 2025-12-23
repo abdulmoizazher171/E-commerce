@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import TableRow from "./TableRow";
+import { Button } from "@/components/ui/button"
 const Customers = () => {
 
     const [customers , setcustomers] = useState([]);
@@ -31,6 +32,11 @@ console.log(customers)
             </tr>
             {customers.map((customer: any)=> (<TableRow customerId={customer.customerId} firstName={customer.firstName} lastName={customer.lastName} address={customer.address} city={customer.city} postalCode={customer.postalCode} email={customer.email} creditCard={customer.creditCard}/>))}
            </table>
+  
+
+          
+         
+         
         </div>
     )
 }
